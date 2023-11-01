@@ -191,7 +191,7 @@ public class WeatherApp {
         System.out.println("Введите 'q' для выхода.");
 
         while (true) {
-            System.out.println("<====================Добро пожаловать====================>");
+            System.out.println("<=======================Добро пожаловать=======================>");
             System.out.println("Меню:");
             System.out.println("1. Получить данные о погоде");
             System.out.println("2. Выбрать шкалу температуры (Celsius/Fahrenheit/Kelvin)");
@@ -244,11 +244,13 @@ public class WeatherApp {
                 dataCollectionStrategy.collectData(weatherData);
             } else if ("5".equals(choice)) {
                 // Display weather data
+                System.out.println("<==============================================================>");
                 System.out.println("Последние данные о погоде:");
                 WeatherReportDecorator temperatureDecorator = new TemperatureDecorator(weatherData, temperatureScale);
                 temperatureDecorator.display();
                 System.out.println("Влажность: " + weatherData.getHumidity() + "%");
                 System.out.println("Давление: " + weatherData.getPressure() + " гПа");
+                System.out.println("<==============================================================>");
             } else if ("6".equals(choice)) {
                 // Display weather condition
                 weatherData.displayWeatherCondition();
